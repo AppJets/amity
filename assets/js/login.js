@@ -13,15 +13,16 @@ const API_BASE = "https://uatplus.amizone.net/dubaiapi/api/Student";
 
 const api = {
     async login({ UserId, Password }) {
-        // TODO: replace with real call:
+        // DEMO: accept any non-empty credentials and proceed to the dashboard.
+        // Replace with the real call when wiring the API:
         // const r = await fetch(`${API_BASE}/Login`, {
         //   method: "POST",
         //   headers: { "Content-Type": "application/json" },
         //   body: JSON.stringify({ UserId, Password })
         // });
-        // return await r.json();
-        await wait(700);
-        return { sStatus: "DEMO", message: "UI preview only — API not wired yet." };
+        // return await r.json();   // { sStatus: "Success", tokenid, ... }
+        await wait(500);
+        return { sStatus: "Success" };
     },
     async forgotPassword(email) {
         // TODO: POST {API_BASE}/Login/ForgotPassword  { UserId: 999, UserEmail: email }
