@@ -1,0 +1,29 @@
+/* OPTION D — Campus split, BRIGHTENED.
+   The campus photo is clearly visible; a bottom scrim keeps the
+   logo/title/tagline legible, anchored to the lower-left. */
+.login__brand {
+    background:
+        linear-gradient(to top,
+            rgba(6,34,63,.92) 0%,
+            rgba(6,34,63,.55) 32%,
+            rgba(6,34,63,.18) 62%,
+            rgba(6,34,63,.05) 100%),
+        url('../img/campus.jpg') center/cover no-repeat;
+    justify-content: flex-end;   /* anchor brand text to bottom */
+}
+.orb { display: none; }
+
+/* A touch more polish on the brand text over the photo */
+.login__brand-logo { filter: drop-shadow(0 4px 16px rgba(0,0,0,.5)); }
+.login__brand h1 { text-shadow: 0 2px 12px rgba(0,0,0,.4); }
+.login__tagline { text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+
+/* On mobile (stacked) keep brand readable with a slightly stronger scrim */
+@media (max-width: 1023px) {
+    .login__brand {
+        background:
+            linear-gradient(to top, rgba(6,34,63,.92) 0%, rgba(6,34,63,.55) 60%, rgba(6,34,63,.35) 100%),
+            url('../img/campus.jpg') center/cover no-repeat;
+        justify-content: center;
+    }
+}

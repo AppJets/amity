@@ -1,0 +1,7 @@
+/* OPTION A — Real campus photo in the brand panel (split layout) */
+.login__brand {
+    background:
+        linear-gradient(150deg, rgba(6,34,63,.93) 0%, rgba(13,69,131,.80) 55%, rgba(21,101,192,.70) 100%),
+        url('../img/campus.jpg') center/cover no-repeat;
+}
+.orb { display: none; } /* the photo carries the visual interest */

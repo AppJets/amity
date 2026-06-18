@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e244e" />
+    <title>Dashboard · Amity University Dubai — Student Portal</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Icon libraries (use whichever fits best) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />        <!-- Font Awesome:  <i class="fa-solid fa-house"></i> -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />               <!-- Phosphor:      <i class="ph-bold ph-house"></i> -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />                  <!-- Phosphor bold: <i class="ph-bold ph-house"></i> -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />              <!-- Phosphor duo:  <i class="ph-duotone ph-house"></i> -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />                 <!-- Phosphor fill: <i class="ph-fill ph-house"></i> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.1.0/dist/tabler-icons.min.css" /> <!-- Tabler:        <i class="ti ti-home"></i> -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>                                                      <!-- Lucide:        <i data-lucide="house"></i> -->
+
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+</head>
+<body class="page-dashboard">
+<div class="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sb-head">
+            <img class="sb-head__logo logo-light" src="assets/img/amity-logo-dark.png" alt="Amity University Dubai" />
+            <img class="sb-head__logo logo-dark" src="assets/img/amity-logo-white.png" alt="Amity University Dubai" />
+            <img class="sb-head__icon" src="assets/img/amity-icon.png" alt="Amity" />
+            <button class="sb-toggle" id="sbToggle" aria-label="Toggle sidebar"><i class="ph-bold ph-caret-left"></i></button>
+            <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="sb-search">
+            <i class="ph-bold ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." aria-label="Search" />
+        </div>
+
+        <nav class="nav">
+            <a class="nav__link is-active" href="dashboard.html" data-tip="Dashboard"><i class="ph-bold ph-squares-four"></i> <span class="nav__text">Dashboard</span></a>
+
+            <div class="nav__label">Academics</div>
+            <a class="nav__link" href="#" data-tip="Attendance"><i class="ph-bold ph-check-circle"></i> <span class="nav__text">Attendance</span></a>
+            <a class="nav__link" href="#" data-tip="Timetable"><i class="ph-bold ph-calendar-dots"></i> <span class="nav__text">Timetable</span></a>
+            <a class="nav__link" href="#" data-tip="Course Registration"><i class="ph-bold ph-clipboard-text"></i> <span class="nav__text">Course Registration</span></a>
+            <a class="nav__link" href="#" data-tip="Exams & Results"><i class="ph-bold ph-exam"></i> <span class="nav__text">Exams &amp; Results</span></a>
+
+            <div class="nav__label">Services</div>
+            <a class="nav__link" href="#" data-tip="Fees"><i class="ph-bold ph-bank"></i> <span class="nav__text">Fees</span> <span class="nav__badge">Due</span></a>
+            <a class="nav__link" href="#" data-tip="Visa Services"><i class="ph-bold ph-airplane-tilt"></i> <span class="nav__text">Visa Services</span></a>
+            <a class="nav__link" href="#" data-tip="Letter Requests"><i class="ph-bold ph-envelope-simple"></i> <span class="nav__text">Letter Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Lab & Studio Booking"><i class="ph-bold ph-flask"></i> <span class="nav__text">Lab &amp; Studio Booking</span></a>
+            <a class="nav__link" href="#" data-tip="E-Library"><i class="ph-bold ph-books"></i> <span class="nav__text">E-Library</span></a>
+            <a class="nav__link" href="#" data-tip="Hostel"><i class="ph-bold ph-bed"></i> <span class="nav__text">Hostel</span></a>
+
+            <div class="nav__label">More</div>
+            <a class="nav__link" href="#" data-tip="Academic Requests"><i class="ph-bold ph-arrows-clockwise"></i> <span class="nav__text">Academic Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Feedback"><i class="ph-bold ph-chat-circle-dots"></i> <span class="nav__text">Feedback</span></a>
+        </nav>
+
+        <div class="profile sb-profile" id="profile">
+            <button class="sb-user" id="profileBtn" data-tip="Ghaya Alsuwaidi" aria-haspopup="true" aria-expanded="false">
+                <span class="sb-user__pic"><img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" /></span>
+                <span class="sb-user__info">
+                    <span class="sb-user__name">Ghaya Alsuwaidi</span>
+                    <span class="sb-user__mail">AUD31310 · BIDES</span>
+                </span>
+                <i class="sb-user__more ph-bold ph-dots-three-outline"></i>
+            </button>
+            <div class="profile__dropdown profile__dropdown--up" role="menu">
+                <div class="profile__head">
+                    <img class="profile__pic" src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" />
+                    <div>
+                        <div class="profile__name">Ghaya Alsuwaidi</div>
+                        <div class="profile__sub">AUD31310 · BIDES</div>
+                    </div>
+                </div>
+                <div class="profile__divider"></div>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-user"></i> My Profile</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-identification-card"></i> Personal Details</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-key"></i> Change Password</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-gear"></i> Settings</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-question"></i> Help &amp; Support</a>
+                <div class="profile__divider"></div>
+                <a class="profile__link profile__link--logout" href="login-e.html" role="menuitem"><i class="ph-bold ph-sign-out"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+    <div class="sb-tip" id="sbTip" role="tooltip"></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+        <header class="topbar">
+            <button class="topbar__user" id="drawerBtn" aria-label="Open menu"><img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" /></button>
+            <button class="hamburger" id="hamburger" aria-label="Open menu"><i class="ph-bold ph-list"></i></button>
+            <button class="sb-expand" id="sbExpand" aria-label="Expand sidebar"><i class="ph-bold ph-sidebar-simple"></i></button>
+            <span class="topbar__title">Dashboard</span>
+            <span class="topbar__spacer"></span>
+            <button class="icon-btn" aria-label="Search"><i class="ph-bold ph-magnifying-glass"></i></button>
+            <button class="icon-btn" aria-label="Notifications"><i class="ph-bold ph-bell"></i><span class="dot"></span></button>
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="ph-bold ph-moon" id="themeIcon"></i></button>
+        </header>
+
+        <main class="content">
+            <!-- Greeting -->
+            <div class="greeting">
+                <h1>Welcome back, Ghaya <span class="wave">👋</span></h1>
+                <p>Tuesday, 17 June 2026 · Semester 4 · Bachelor of Interior Design</p>
+            </div>
+
+            <!-- gradient defs for donuts -->
+            <svg width="0" height="0" style="position:absolute"><defs>
+                <linearGradient id="gdg" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#ffd84d"/><stop offset="100%" stop-color="#e0a800"/>
+                </linearGradient>
+                <linearGradient id="attgrad" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#4ade80"/><stop offset="100%" stop-color="#16a34a"/>
+                </linearGradient>
+            </defs></svg>
+
+            <!-- Stat cards -->
+            <section class="stat-grid">
+                <div class="w scard">
+                    <div class="scard__top">
+                        <span class="scard__ico ico-green"><i class="fa-solid fa-user-check"></i></span>
+                        <span class="chip chip-up"><i class="fa-solid fa-arrow-up"></i> 2%</span>
+                    </div>
+                    <div class="scard__row">
+                        <div>
+                            <div class="scard__num"><span data-count="87" data-suffix="%">0%</span></div>
+                            <div class="scard__lbl">Attendance</div>
+                        </div>
+                        <div class="donut">
+                            <svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9155"/><circle class="fg" stroke="url(#gdg)" cx="18" cy="18" r="15.9155" stroke-dasharray="87 100"/></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w scard">
+                    <div class="scard__top">
+                        <span class="scard__ico ico-violet"><i class="fa-solid fa-award"></i></span>
+                        <span class="chip chip-up"><i class="fa-solid fa-arrow-up"></i> 0.2</span>
+                    </div>
+                    <div class="scard__row">
+                        <div>
+                            <div class="scard__num"><span data-count="3.8" data-decimals="1">0.0</span></div>
+                            <div class="scard__lbl">CGPA · Distinction</div>
+                        </div>
+                        <div class="spark">
+                            <span style="height:42%"></span><span style="height:55%"></span><span style="height:48%"></span>
+                            <span style="height:72%"></span><span style="height:82%"></span><span class="hi" style="height:96%"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w scard">
+                    <div class="scard__top">
+                        <span class="scard__ico ico-gold"><i class="fa-solid fa-building-columns"></i></span>
+                        <span class="chip chip-gold">75% paid</span>
+                    </div>
+                    <div class="scard__row">
+                        <div>
+                            <div class="scard__num">AED <span data-count="9">0</span>K</div>
+                            <div class="scard__lbl">Outstanding</div>
+                        </div>
+                        <div class="donut">
+                            <svg viewBox="0 0 36 36"><circle class="bg" cx="18" cy="18" r="15.9155"/><circle class="fg" stroke="url(#gdg)" cx="18" cy="18" r="15.9155" stroke-dasharray="75 100"/></svg>
+                            <div class="donut__c">75%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="w scard">
+                    <div class="scard__top">
+                        <span class="scard__ico ico-blue"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="chip chip-flat">Semester 4</span>
+                    </div>
+                    <div class="scard__num"><span data-count="78">0</span><span style="font-size:1.05rem;color:var(--ink-500);font-weight:500">/120</span></div>
+                    <div class="scard__lbl">Credits earned</div>
+                    <div class="prog"><span style="width:65%"></span></div>
+                </div>
+            </section>
+
+            <!-- Content grid -->
+            <section class="wgrid">
+                <!-- Attendance by course -->
+                <div class="w">
+                    <div class="w__head">
+                        <span class="w__title"><i class="ph-bold ph-chart-bar"></i> Attendance by Course</span>
+                        <span class="chip chip-up">Overall 81%</span>
+                    </div>
+                    <div class="w__body">
+                        <div class="acourse">
+                            <span class="acourse__code">GENE120</span>
+                            <div class="acourse__main">
+                                <div class="acourse__top">
+                                    <span class="acourse__name">Islamic Culture</span>
+                                    <span class="acourse__right"><span class="acourse__count">22/24</span><span class="acourse__pct good">92%</span></span>
+                                </div>
+                                <div class="acourse__bar good"><span style="width:92%"></span></div>
+                            </div>
+                        </div>
+                        <div class="acourse">
+                            <span class="acourse__code">HUMN110</span>
+                            <div class="acourse__main">
+                                <div class="acourse__top">
+                                    <span class="acourse__name">Communication Skills</span>
+                                    <span class="acourse__right"><span class="acourse__count">20/21</span><span class="acourse__pct good">95%</span></span>
+                                </div>
+                                <div class="acourse__bar good"><span style="width:95%"></span></div>
+                            </div>
+                        </div>
+                        <div class="acourse">
+                            <span class="acourse__code">NSCI100</span>
+                            <div class="acourse__main">
+                                <div class="acourse__top">
+                                    <span class="acourse__name">Natural Sciences</span>
+                                    <span class="acourse__right"><span class="acourse__count">19/23</span><span class="acourse__pct good">83%</span></span>
+                                </div>
+                                <div class="acourse__bar good"><span style="width:83%"></span></div>
+                            </div>
+                        </div>
+                        <div class="acourse">
+                            <span class="acourse__code">IDES120</span>
+                            <div class="acourse__main">
+                                <div class="acourse__top">
+                                    <span class="acourse__name">Fundamentals of Interior Design</span>
+                                    <span class="acourse__right"><span class="acourse__count">16/22</span><span class="acourse__pct warn">73%</span></span>
+                                </div>
+                                <div class="acourse__bar warn"><span style="width:73%"></span></div>
+                            </div>
+                        </div>
+                        <div class="acourse">
+                            <span class="acourse__code">IDES121</span>
+                            <div class="acourse__main">
+                                <div class="acourse__top">
+                                    <span class="acourse__name">Design Studio</span>
+                                    <span class="acourse__right"><span class="acourse__count">11/18</span><span class="acourse__pct low">61%</span></span>
+                                </div>
+                                <div class="acourse__bar low"><span style="width:61%"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Announcements -->
+                <div class="w">
+                    <div class="w__head">
+                        <span class="w__title"><i class="fa-solid fa-bullhorn"></i> Announcements</span>
+                        <a class="w__link" href="#">All</a>
+                    </div>
+                    <div class="w__body">
+                        <div class="feed-item">
+                            <span class="feed-ico"><i class="fa-solid fa-file-pen"></i></span>
+                            <div><b>Mid-term schedule released</b><p>Exams begin 30 June. Check your admit card.</p><time>2 hours ago</time></div>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-ico"><i class="fa-solid fa-money-bill"></i></span>
+                            <div><b>Fee installment due</b><p>2nd installment due by 25 June 2026.</p><time>Yesterday</time></div>
+                        </div>
+                        <div class="feed-item">
+                            <span class="feed-ico"><i class="fa-solid fa-book"></i></span>
+                            <div><b>Library extended hours</b><p>Open till midnight during exam week.</p><time>2 days ago</time></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Timetable (timeline) -->
+                <div class="w">
+                    <div class="w__head">
+                        <span class="w__title"><i class="fa-solid fa-calendar-days"></i> Today's Timetable</span>
+                        <a class="w__link" href="#">Full week</a>
+                    </div>
+                    <div class="w__body">
+                        <div class="timeline">
+                            <div class="tl now">
+                                <div class="tl__time"><b>10:00</b><span>AM</span></div>
+                                <div class="tl__info"><b>Design Studio III</b><span>Studio B-204 · Dr. Layla Hassan</span></div>
+                                <span class="tl__tag">Now</span>
+                            </div>
+                            <div class="tl">
+                                <div class="tl__time"><b>11:30</b><span>AM</span></div>
+                                <div class="tl__info"><b>History of Architecture</b><span>Room A-110 · Prof. Omar Said</span></div>
+                                <span class="tl__tag">Lecture</span>
+                            </div>
+                            <div class="tl">
+                                <div class="tl__time"><b>01:00</b><span>PM</span></div>
+                                <div class="tl__info"><b>Materials &amp; Methods</b><span>Lab C-3 · Dr. Mariam Noor</span></div>
+                                <span class="tl__tag">Lab</span>
+                            </div>
+                            <div class="tl">
+                                <div class="tl__time"><b>03:00</b><span>PM</span></div>
+                                <div class="tl__info"><b>Digital Visualization</b><span>Computer Lab 2 · Mr. Adil Khan</span></div>
+                                <span class="tl__tag">Studio</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick actions -->
+                <div class="w">
+                    <div class="w__head">
+                        <span class="w__title"><i class="fa-solid fa-bolt"></i> Quick Actions</span>
+                    </div>
+                    <div class="w__body">
+                        <div class="qa">
+                            <a href="#"><i class="fa-solid fa-credit-card"></i><b>Pay Fees</b></a>
+                            <a href="#"><i class="fa-solid fa-file-signature"></i><b>Exam Form</b></a>
+                            <a href="#"><i class="fa-solid fa-envelope-open-text"></i><b>Request Letter</b></a>
+                            <a href="#"><i class="fa-solid fa-flask"></i><b>Book Lab</b></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Mobile bottom navigation -->
+    <nav class="bottomnav" aria-label="Primary">
+        <a class="bn__item is-active" href="dashboard.html"><i class="ph-bold ph-squares-four"></i><span>Home</span></a>
+        <a class="bn__item" href="#"><i class="ph-bold ph-check-circle"></i><span>Attendance</span></a>
+        <a class="bn__item" href="#"><i class="ph-bold ph-calendar-dots"></i><span>Timetable</span></a>
+        <a class="bn__item" href="#"><i class="ph-bold ph-bank"></i><span>Fees</span></a>
+        <a class="bn__item" href="#"><i class="ph-bold ph-exam"></i><span>Results</span></a>
+    </nav>
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

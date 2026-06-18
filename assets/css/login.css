@@ -1,0 +1,98 @@
+/* ============================================================
+   Login page — Mobile-first, then split-panel on laptop/desktop
+   ============================================================ */
+
+.login {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-columns: 1fr;          /* MOBILE: single column */
+}
+
+/* ---------- Brand panel ---------- */
+.login__brand {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background: linear-gradient(150deg, var(--brand-900) 0%, var(--brand-700) 55%, var(--brand-600) 100%);
+    padding: var(--sp-8) var(--sp-5) var(--sp-6);
+    text-align: center;
+}
+.login__brand-logo {
+    width: 132px; margin: 0 auto var(--sp-4);
+    filter: drop-shadow(0 6px 14px rgba(0,0,0,.3));
+}
+.login__brand h1 { font-size: var(--fs-xl); margin-bottom: var(--sp-2); }
+.login__tagline {
+    font-size: var(--fs-sm); font-weight: 300; letter-spacing: .04em;
+    color: var(--brand-300); text-transform: uppercase; line-height: 1.7;
+    max-width: 22rem; margin: 0 auto;
+}
+.login__tagline strong { color: var(--accent); font-weight: 600; }
+
+/* Decorative floating orbs */
+.orb { position: absolute; border-radius: 50%; filter: blur(2px); opacity: .35;
+    background: radial-gradient(circle at 30% 30%, var(--accent), transparent 70%); }
+.orb:nth-child(1){ width:140px;height:140px; top:-30px; left:-20px; }
+.orb:nth-child(2){ width:90px;height:90px; bottom:10%; right:-20px; opacity:.25; }
+.orb:nth-child(3){ width:60px;height:60px; top:40%; left:12%; opacity:.2;
+    background: radial-gradient(circle at 30% 30%, var(--accent-2), transparent 70%); }
+
+/* ---------- Form panel ---------- */
+.login__form-wrap {
+    display: flex; align-items: center; justify-content: center;
+    padding: var(--sp-6) var(--sp-5) var(--sp-8);
+    background: var(--surface);
+}
+.login__card { width: 100%; max-width: 400px; }
+.login__card h2 { font-size: var(--fs-2xl); }
+.login__card .sub { color: var(--ink-500); margin-bottom: var(--sp-6); font-size: var(--fs-sm); }
+
+.login__row { display: flex; justify-content: flex-end; margin: calc(-1 * var(--sp-2)) 0 var(--sp-5); }
+.login__row a { font-size: var(--fs-sm); font-weight: 500; }
+
+.login__footer { margin-top: var(--sp-6); font-size: var(--fs-xs); color: var(--ink-500); text-align: center; }
+
+/* ---------- Modal (forgot password) ---------- */
+.modal { position: fixed; inset: 0; z-index: 60; display: none; place-items: center; padding: var(--sp-4); }
+.modal.open { display: grid; }
+.modal__overlay { position: absolute; inset: 0; background: rgba(6,34,63,.55); backdrop-filter: blur(2px); }
+.modal__box {
+    position: relative; width: 100%; max-width: 420px;
+    background: #fff; border-radius: var(--r-lg); box-shadow: var(--shadow-lg);
+    padding: var(--sp-6); animation: pop .25s var(--ease);
+}
+@keyframes pop { from { transform: translateY(12px) scale(.98); opacity: 0; } }
+.modal__box h3 { font-size: var(--fs-xl); }
+.modal__close { position: absolute; top: 12px; right: 14px; background: none; border: none; font-size: 1.5rem; color: var(--ink-500); }
+
+/* ============================================================
+   RESPONSIVE — progressive enhancement upward
+   ============================================================ */
+
+/* Tablet: roomier brand panel */
+@media (min-width: 640px) {
+    .login__brand { padding: var(--sp-10) var(--sp-6); }
+    .login__brand-logo { width: 160px; }
+    .login__brand h1 { font-size: var(--fs-2xl); }
+}
+
+/* Laptop & Desktop: split 2-panel layout */
+@media (min-width: 1024px) {
+    .login { grid-template-columns: 1.05fr 1fr; }
+    .login__brand {
+        display: flex; flex-direction: column; justify-content: center;
+        text-align: left; padding: var(--sp-10);
+    }
+    .login__brand-logo { margin: 0 0 var(--sp-6); width: 180px; }
+    .login__brand h1 { font-size: var(--fs-3xl); }
+    .login__tagline { margin: 0; max-width: 26rem; }
+    .orb:nth-child(1){ width:260px;height:260px; }
+    .orb:nth-child(2){ width:180px;height:180px; }
+    .login__form-wrap { padding: var(--sp-10); }
+}
+
+/* Large desktop: cap and center the form nicely */
+@media (min-width: 1440px) {
+    .login__card { max-width: 420px; }
+}

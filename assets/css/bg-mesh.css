@@ -1,0 +1,9 @@
+/* OPTION B — Modern, airy mesh gradient (no photo, lighter feel) */
+.login__brand {
+    background:
+        radial-gradient(at 18% 22%, rgba(88,195,255,.85) 0, transparent 45%),
+        radial-gradient(at 85% 12%, rgba(56,232,198,.65) 0, transparent 40%),
+        radial-gradient(at 75% 85%, rgba(124,77,255,.55) 0, transparent 48%),
+        linear-gradient(135deg, #0d4583 0%, #1565c0 100%);
+}
+.orb { display: none; }

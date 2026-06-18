@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#06223f" />
+    <title>Sign In · Amity University Dubai — Student Portal</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/login.css" />
+</head>
+<body>
+    <main class="login">
+        <!-- Brand panel -->
+        <section class="login__brand">
+            <span class="orb"></span><span class="orb"></span><span class="orb"></span>
+            <img class="login__brand-logo" src="assets/img/amity-dubai-logo.png" alt="Amity University Dubai" />
+            <h1>Student Portal</h1>
+            <p class="login__tagline">
+                We are now a <strong>Ministry of Education</strong> licensed institution
+            </p>
+        </section>
+
+        <!-- Form panel -->
+        <section class="login__form-wrap">
+            <div class="login__card">
+                <h2>Welcome back</h2>
+                <p class="sub">Sign in to access your student dashboard.</p>
+
+                <!-- Error / status placeholder (shown by JS / API later) -->
+                <div id="loginAlert" class="alert alert-danger hide" role="alert"></div>
+
+                <form id="loginForm" novalidate>
+                    <div class="field">
+                        <label for="UserId">Username</label>
+                        <div class="input-wrap">
+                            <i class="fa-regular fa-user lead"></i>
+                            <input class="input" id="UserId" name="UserId" type="text"
+                                   inputmode="text" autocomplete="username"
+                                   placeholder="e.g. AUD31310" required />
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="Password">Password</label>
+                        <div class="input-wrap">
+                            <i class="fa-solid fa-lock lead"></i>
+                            <input class="input" id="Password" name="Password" type="password"
+                                   autocomplete="current-password" placeholder="Enter your password" required />
+                            <button type="button" class="input-toggle" id="pwToggle"
+                                    aria-label="Show password">
+                                <i class="fa-regular fa-eye" id="pwToggleIcon"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="login__row">
+                        <a href="#" id="forgotLink">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="loginBtn">
+                        <span id="loginBtnText"><i class="fa-solid fa-right-to-bracket"></i> Sign In</span>
+                    </button>
+                </form>
+
+                <p class="login__footer">
+                    © <span id="year"></span> Amity University Dubai · All rights reserved
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Forgot-password modal -->
+    <div class="modal" id="forgotModal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+        <div class="modal__overlay" data-close></div>
+        <div class="modal__box">
+            <button class="modal__close" data-close aria-label="Close">&times;</button>
+            <h3 id="forgotTitle">Reset password</h3>
+            <p class="muted" style="font-size:var(--fs-sm);margin-bottom:var(--sp-5)">
+                Enter your registered email and we'll send you a recovery link.
+            </p>
+            <div id="forgotAlert" class="alert hide"></div>
+            <div class="field">
+                <label for="forgotEmail">Email address</label>
+                <div class="input-wrap">
+                    <i class="fa-regular fa-envelope lead"></i>
+                    <input class="input" id="forgotEmail" type="email" placeholder="you@example.com" />
+                </div>
+            </div>
+            <button class="btn btn-primary" id="forgotSend">
+                <span><i class="fa-regular fa-paper-plane"></i> Send link</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+</body>
+</html>
