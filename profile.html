@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e244e" />
+    <title>Profile · Amity University Dubai — Student Portal</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/profile.css" />
+</head>
+<body class="page-inner">
+<div class="app">
+
+    <!-- ===================== SIDEBAR (desktop) ===================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sb-head">
+            <img class="sb-head__logo logo-light" src="assets/img/amity-logo-dark.png" alt="Amity University Dubai" />
+            <img class="sb-head__logo logo-dark" src="assets/img/amity-logo-white.png" alt="Amity University Dubai" />
+            <img class="sb-head__icon" src="assets/img/amity-icon.png" alt="Amity" />
+            <button class="sb-toggle" id="sbToggle" aria-label="Toggle sidebar"><i class="ph-bold ph-caret-left"></i></button>
+            <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="sb-search">
+            <i class="ph-bold ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." aria-label="Search" />
+        </div>
+
+        <nav class="nav">
+            <a class="nav__link" href="dashboard.html" data-tip="Dashboard"><i class="ph-bold ph-squares-four"></i> <span class="nav__text">Dashboard</span></a>
+
+            <div class="nav__label">Academics</div>
+            <a class="nav__link" href="attendance.html" data-tip="Attendance"><i class="ph-bold ph-check-circle"></i> <span class="nav__text">Attendance</span></a>
+            <a class="nav__link" href="timetable.html" data-tip="Timetable"><i class="ph-bold ph-calendar-dots"></i> <span class="nav__text">Timetable</span></a>
+            <a class="nav__link" href="registration.html" data-tip="Registration"><i class="ph-bold ph-clipboard-text"></i> <span class="nav__text">Registration</span></a>
+            <a class="nav__link" href="#" data-tip="Exams & Results"><i class="ph-bold ph-exam"></i> <span class="nav__text">Exams &amp; Results</span></a>
+
+            <div class="nav__label">Services</div>
+            <a class="nav__link" href="#" data-tip="Fees"><i class="ph-bold ph-bank"></i> <span class="nav__text">Fees</span> <span class="nav__badge">Due</span></a>
+            <a class="nav__link" href="#" data-tip="Visa Services"><i class="ph-bold ph-airplane-tilt"></i> <span class="nav__text">Visa Services</span></a>
+            <a class="nav__link" href="#" data-tip="Letter Requests"><i class="ph-bold ph-envelope-simple"></i> <span class="nav__text">Letter Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Lab & Studio Booking"><i class="ph-bold ph-flask"></i> <span class="nav__text">Lab &amp; Studio Booking</span></a>
+            <a class="nav__link" href="#" data-tip="E-Library"><i class="ph-bold ph-books"></i> <span class="nav__text">E-Library</span></a>
+            <a class="nav__link" href="#" data-tip="Hostel"><i class="ph-bold ph-bed"></i> <span class="nav__text">Hostel</span></a>
+
+            <div class="nav__label">More</div>
+            <a class="nav__link" href="#" data-tip="Academic Requests"><i class="ph-bold ph-arrows-clockwise"></i> <span class="nav__text">Academic Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Feedback"><i class="ph-bold ph-chat-circle-dots"></i> <span class="nav__text">Feedback</span></a>
+        </nav>
+
+        <div class="profile sb-profile" id="profile">
+            <button class="sb-user" id="profileBtn" data-tip="Ghaya Alsuwaidi" aria-haspopup="true" aria-expanded="false">
+                <span class="sb-user__pic"><img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" /></span>
+                <span class="sb-user__info">
+                    <span class="sb-user__name">Ghaya Alsuwaidi</span>
+                    <span class="sb-user__mail">AUD31310 · BIDES</span>
+                </span>
+                <i class="sb-user__more ph-bold ph-dots-three-outline"></i>
+            </button>
+            <div class="profile__dropdown profile__dropdown--up" role="menu">
+                <div class="profile__head">
+                    <img class="profile__pic" src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" />
+                    <div><div class="profile__name">Ghaya Alsuwaidi</div><div class="profile__sub">AUD31310 · BIDES</div></div>
+                </div>
+                <div class="profile__divider"></div>
+                <a class="profile__link" href="profile.html" role="menuitem"><i class="ph-bold ph-user"></i> My Profile</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-gear"></i> Settings</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-question"></i> Help &amp; Support</a>
+                <div class="profile__divider"></div>
+                <a class="profile__link profile__link--logout" href="index.html" role="menuitem"><i class="ph-bold ph-sign-out"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+    <div class="sb-tip" id="sbTip" role="tooltip"></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+        <header class="topbar">
+            <button class="topbar__back" aria-label="Back"
+                    onclick="window.history.length > 1 ? history.back() : (location.href='dashboard.html')">
+                <i class="ph-bold ph-arrow-left"></i>
+            </button>
+            <button class="sb-expand" id="sbExpand" aria-label="Expand sidebar"><i class="ph-bold ph-sidebar-simple"></i></button>
+            <span class="topbar__title">Profile</span>
+            <span class="topbar__spacer"></span>
+            <button class="icon-btn" aria-label="Search"><i class="ph-bold ph-magnifying-glass"></i></button>
+            <button class="icon-btn" aria-label="Notifications"><i class="ph-bold ph-bell"></i><span class="dot"></span></button>
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="ph-bold ph-moon" id="themeIcon"></i></button>
+        </header>
+
+        <main class="content">
+            <div class="pf">
+
+                <!-- ===== identity banner ===== -->
+                <section class="pf-id">
+                    <div class="pf-id__cover"></div>
+                    <div class="pf-id__body">
+                        <div class="pf-id__avatar">
+                            <img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" />
+                            <button class="pf-id__cam" aria-label="Change photo"><i class="ph-bold ph-camera"></i></button>
+                        </div>
+                        <div class="pf-id__meta">
+                            <h1 class="pf-id__name">Ghaya Alsuwaidi</h1>
+                            <div class="pf-id__prog">Bachelor of Interior Design</div>
+                            <div class="pf-id__chips">
+                                <span class="pf-chip"><i class="ph-bold ph-identification-badge"></i>AUD31310</span>
+                                <span class="pf-chip"><i class="ph-bold ph-student"></i>BIDES · Year 4</span>
+                                <span class="pf-chip pf-chip--ok"><i class="ph-bold ph-seal-check"></i>Active</span>
+                            </div>
+                        </div>
+                        <button class="pf-id__edit"><i class="ph-bold ph-pencil-simple"></i> Edit profile</button>
+                    </div>
+                </section>
+
+                <div class="pf-grid">
+
+                    <!-- ===== student information ===== -->
+                    <section class="pf-card">
+                        <div class="pf-card__head"><i class="ph-bold ph-user-circle"></i> Student Information</div>
+                        <div class="pf-info">
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-envelope-simple"></i></span>
+                                <div><span class="pf-info__l">Email</span><span class="pf-info__v">ghaya.alsuwaidi@amitydubai.ae</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-phone"></i></span>
+                                <div><span class="pf-info__l">Mobile</span><span class="pf-info__v">+971 50 997 2598</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-user"></i></span>
+                                <div><span class="pf-info__l">Gender</span><span class="pf-info__v">Female</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-heart"></i></span>
+                                <div><span class="pf-info__l">Marital Status</span><span class="pf-info__v">Single</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-cake"></i></span>
+                                <div><span class="pf-info__l">Date of Birth</span><span class="pf-info__v">14 Mar 2004</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-globe-hemisphere-east"></i></span>
+                                <div><span class="pf-info__l">Nationality</span><span class="pf-info__v">United Arab Emirates</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-identification-card"></i></span>
+                                <div><span class="pf-info__l">Emirates ID</span><span class="pf-info__v">784-2004-6562341-6</span></div>
+                            </div>
+                            <div class="pf-info__item">
+                                <span class="pf-info__ico"><i class="ph-bold ph-calendar-x"></i></span>
+                                <div><span class="pf-info__l">Emirates ID Expiry</span><span class="pf-info__v">12 Aug 2027</span></div>
+                            </div>
+                            <div class="pf-info__item pf-info__item--wide">
+                                <span class="pf-info__ico"><i class="ph-bold ph-map-pin"></i></span>
+                                <div><span class="pf-info__l">Address</span><span class="pf-info__v">Al Barsha, Dubai, United Arab Emirates</span></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- ===== academic snapshot ===== -->
+                    <section class="pf-card">
+                        <div class="pf-card__head"><i class="ph-bold ph-graduation-cap"></i> Academic Snapshot</div>
+
+                        <div class="pf-credits">
+                            <div class="pf-credits__top">
+                                <span>Credits completed</span>
+                                <b>78 <small>/ 123</small></b>
+                            </div>
+                            <div class="pf-credits__bar"><span style="width:63%"></span></div>
+                            <div class="pf-credits__legend">
+                                <span><i class="dot done"></i>78 completed</span>
+                                <span><i class="dot left"></i>45 remaining</span>
+                            </div>
+                        </div>
+
+                        <div class="pf-stats">
+                            <div class="pf-stat">
+                                <span class="pf-stat__l">CGPA</span>
+                                <span class="pf-stat__v">3.62<small>/ 4.0</small></span>
+                            </div>
+                            <div class="pf-stat">
+                                <span class="pf-stat__l">Academic Standing</span>
+                                <span class="pf-stat__v pf-stat__v--ok">Good Standing</span>
+                            </div>
+                            <div class="pf-stat">
+                                <span class="pf-stat__l">Expected Graduation</span>
+                                <span class="pf-stat__v">Spring 2026</span>
+                            </div>
+                            <div class="pf-stat">
+                                <span class="pf-stat__l">Enrolment Status</span>
+                                <span class="pf-stat__v">Full-time</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+</body>
+</html>

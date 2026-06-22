@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e244e" />
+    <title>Timetable · Amity University Dubai — Student Portal</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/timetable.css" />
+</head>
+<body class="page-inner">
+<div class="app">
+
+    <!-- ===================== SIDEBAR (desktop) ===================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sb-head">
+            <img class="sb-head__logo logo-light" src="assets/img/amity-logo-dark.png" alt="Amity University Dubai" />
+            <img class="sb-head__logo logo-dark" src="assets/img/amity-logo-white.png" alt="Amity University Dubai" />
+            <img class="sb-head__icon" src="assets/img/amity-icon.png" alt="Amity" />
+            <button class="sb-toggle" id="sbToggle" aria-label="Toggle sidebar"><i class="ph-bold ph-caret-left"></i></button>
+            <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="sb-search">
+            <i class="ph-bold ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." aria-label="Search" />
+        </div>
+
+        <nav class="nav">
+            <a class="nav__link" href="dashboard.html" data-tip="Dashboard"><i class="ph-bold ph-squares-four"></i> <span class="nav__text">Dashboard</span></a>
+
+            <div class="nav__label">Academics</div>
+            <a class="nav__link" href="attendance.html" data-tip="Attendance"><i class="ph-bold ph-check-circle"></i> <span class="nav__text">Attendance</span></a>
+            <a class="nav__link is-active" href="timetable.html" data-tip="Timetable"><i class="ph-bold ph-calendar-dots"></i> <span class="nav__text">Timetable</span></a>
+            <a class="nav__link" href="registration.html" data-tip="Registration"><i class="ph-bold ph-clipboard-text"></i> <span class="nav__text">Registration</span></a>
+            <a class="nav__link" href="#" data-tip="Exams & Results"><i class="ph-bold ph-exam"></i> <span class="nav__text">Exams &amp; Results</span></a>
+
+            <div class="nav__label">Services</div>
+            <a class="nav__link" href="#" data-tip="Fees"><i class="ph-bold ph-bank"></i> <span class="nav__text">Fees</span> <span class="nav__badge">Due</span></a>
+            <a class="nav__link" href="#" data-tip="Visa Services"><i class="ph-bold ph-airplane-tilt"></i> <span class="nav__text">Visa Services</span></a>
+            <a class="nav__link" href="#" data-tip="Letter Requests"><i class="ph-bold ph-envelope-simple"></i> <span class="nav__text">Letter Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Lab & Studio Booking"><i class="ph-bold ph-flask"></i> <span class="nav__text">Lab &amp; Studio Booking</span></a>
+            <a class="nav__link" href="#" data-tip="E-Library"><i class="ph-bold ph-books"></i> <span class="nav__text">E-Library</span></a>
+            <a class="nav__link" href="#" data-tip="Hostel"><i class="ph-bold ph-bed"></i> <span class="nav__text">Hostel</span></a>
+
+            <div class="nav__label">More</div>
+            <a class="nav__link" href="#" data-tip="Academic Requests"><i class="ph-bold ph-arrows-clockwise"></i> <span class="nav__text">Academic Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Feedback"><i class="ph-bold ph-chat-circle-dots"></i> <span class="nav__text">Feedback</span></a>
+        </nav>
+
+        <div class="profile sb-profile" id="profile">
+            <button class="sb-user" id="profileBtn" data-tip="Ghaya Alsuwaidi" aria-haspopup="true" aria-expanded="false">
+                <span class="sb-user__pic"><img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" /></span>
+                <span class="sb-user__info">
+                    <span class="sb-user__name">Ghaya Alsuwaidi</span>
+                    <span class="sb-user__mail">AUD31310 · BIDES</span>
+                </span>
+                <i class="sb-user__more ph-bold ph-dots-three-outline"></i>
+            </button>
+            <div class="profile__dropdown profile__dropdown--up" role="menu">
+                <div class="profile__head">
+                    <img class="profile__pic" src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" />
+                    <div><div class="profile__name">Ghaya Alsuwaidi</div><div class="profile__sub">AUD31310 · BIDES</div></div>
+                </div>
+                <div class="profile__divider"></div>
+                <a class="profile__link" href="profile.html" role="menuitem"><i class="ph-bold ph-user"></i> My Profile</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-gear"></i> Settings</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-question"></i> Help &amp; Support</a>
+                <div class="profile__divider"></div>
+                <a class="profile__link profile__link--logout" href="index.html" role="menuitem"><i class="ph-bold ph-sign-out"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+    <div class="sb-tip" id="sbTip" role="tooltip"></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+        <header class="topbar">
+            <!-- back button: shows only on mobile -->
+            <button class="topbar__back" aria-label="Back"
+                    onclick="window.history.length > 1 ? history.back() : (location.href='dashboard.html')">
+                <i class="ph-bold ph-arrow-left"></i>
+            </button>
+            <button class="sb-expand" id="sbExpand" aria-label="Expand sidebar"><i class="ph-bold ph-sidebar-simple"></i></button>
+            <span class="topbar__title">Timetable</span>
+            <span class="topbar__spacer"></span>
+            <button class="icon-btn" aria-label="Search"><i class="ph-bold ph-magnifying-glass"></i></button>
+            <button class="icon-btn" aria-label="Notifications"><i class="ph-bold ph-bell"></i><span class="dot"></span></button>
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="ph-bold ph-moon" id="themeIcon"></i></button>
+        </header>
+
+        <main class="content">
+            <div class="cal">
+                <div class="cal__bar">
+                    <div class="cal__viewdd" id="viewDd">
+                        <button class="cal__viewbtn" id="viewBtn" aria-haspopup="menu" aria-expanded="false">
+                            <i class="ph-bold ph-calendar-dots cal__viewbtn-lead"></i><span id="viewLabel">Week</span><i class="ph-bold ph-caret-down"></i>
+                        </button>
+                        <div class="cal__scrim" id="viewScrim"></div>
+                        <div class="cal__menu" id="viewMenu" role="menu" aria-label="Calendar view">
+                            <div class="cal__menu-handle"></div>
+                            <button class="cal__menu-item cal__menu-item--action" id="calToday" role="menuitem"><i class="ph-bold ph-arrow-counter-clockwise"></i><span>Jump to today</span></button>
+                            <div class="cal__menu-sep"></div>
+                            <div class="cal__menu-title">View as</div>
+                            <button class="cal__menu-item" data-view="day" role="menuitemradio"><i class="ph-bold ph-calendar-blank"></i><span>Day</span><i class="ph-bold ph-check cal__menu-check"></i></button>
+                            <button class="cal__menu-item" data-view="week" role="menuitemradio"><i class="ph-bold ph-calendar-dots"></i><span>Week</span><i class="ph-bold ph-check cal__menu-check"></i></button>
+                            <button class="cal__menu-item" data-view="month" role="menuitemradio"><i class="ph-bold ph-calendar"></i><span>Month</span><i class="ph-bold ph-check cal__menu-check"></i></button>
+                        </div>
+                    </div>
+                    <div class="cal__nav">
+                        <button class="cal__navbtn" id="calPrev" aria-label="Previous"><i class="ph-bold ph-caret-left"></i></button>
+                        <button class="cal__navbtn" id="calNext" aria-label="Next"><i class="ph-bold ph-caret-right"></i></button>
+                    </div>
+                    <span class="cal__title" id="calTitle"></span>
+                    <span class="cal__spacer"></span>
+                </div>
+                <div class="cal__body" id="calBody"></div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- ===================== EVENT DETAILS (drawer / bottom sheet) ===================== -->
+<div class="evd" id="evDrawer" aria-hidden="true">
+    <div class="evd__scrim" id="evScrim"></div>
+    <aside class="evd__panel" role="dialog" aria-modal="true" aria-label="Class details">
+        <div class="evd__handle" id="evHandle"></div>
+        <button class="evd__close" id="evClose" aria-label="Close"><i class="ph-bold ph-x"></i></button>
+        <div class="evd__body" id="evBody"></div>
+    </aside>
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/timetable.js"></script>
+</body>
+</html>

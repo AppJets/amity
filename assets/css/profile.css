@@ -1,0 +1,87 @@
+/* ============================================================
+   Profile — identity banner + student information + academic snapshot
+   Flat, token-based, consistent with the portal design system.
+   ============================================================ */
+
+.pf { display: flex; flex-direction: column; gap: var(--sp-5); }
+.pf-card { background: var(--surface); border: 1px solid var(--ink-100); border-radius: 18px; padding: var(--sp-5) var(--sp-6); }
+.pf-card__head { display: flex; align-items: center; gap: 9px; font-size: var(--fs-base); font-weight: 700;
+    padding-bottom: var(--sp-4); margin-bottom: var(--sp-4); border-bottom: 1px solid var(--ink-100); }
+.pf-card__head i { color: var(--gold-deep); font-size: 1.2rem; }
+
+/* ---- identity banner ---- */
+.pf-id { background: var(--surface); border: 1px solid var(--ink-100); border-radius: 18px; overflow: hidden; }
+.pf-id__cover { height: 110px; position: relative;
+    background: radial-gradient(120% 160% at 88% -20%, rgba(254,202,22,.34), transparent 60%),
+                linear-gradient(135deg, var(--brand-700), var(--brand-900)); }
+.pf-id__body { display: flex; align-items: flex-end; gap: var(--sp-5); padding: 0 var(--sp-6) var(--sp-5); }
+.pf-id__avatar { position: relative; flex: 0 0 auto; width: 118px; height: 118px; margin-top: -56px; }
+.pf-id__avatar img { width: 100%; height: 100%; border-radius: 24px; object-fit: cover;
+    border: 4px solid var(--surface); box-shadow: 0 6px 18px rgba(15,23,42,.14); }
+.pf-id__cam { position: absolute; right: -6px; bottom: -6px; width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid var(--surface); background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+    color: var(--brand-900); display: grid; place-items: center; cursor: pointer; font-size: .95rem; }
+.pf-id__meta { flex: 1; min-width: 0; padding-bottom: 2px; }
+.pf-id__name { font-size: var(--fs-xl); font-weight: 700; letter-spacing: -.01em; line-height: 1.2; margin: 0; }
+.pf-id__prog { font-size: var(--fs-sm); color: var(--ink-500); margin-top: 2px; }
+.pf-id__chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: var(--sp-3); }
+.pf-chip { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-xs); font-weight: 600;
+    padding: 5px 11px; border-radius: 99px; background: var(--bg); border: 1px solid var(--ink-100); color: var(--ink-700); }
+.pf-chip i { font-size: .95rem; color: var(--ink-500); }
+.pf-chip--ok { background: rgba(22,163,74,.1); border-color: transparent; color: #16a34a; }
+.pf-chip--ok i { color: #16a34a; }
+.pf-id__edit { flex: 0 0 auto; align-self: center; display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border-radius: 11px; border: 1px solid var(--ink-100); background: var(--surface);
+    color: var(--ink-900); font: inherit; font-size: var(--fs-sm); font-weight: 600; cursor: pointer; transition: background var(--t-fast); }
+.pf-id__edit:hover { background: var(--bg); }
+
+/* ---- two-column grid ---- */
+.pf-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: var(--sp-5); align-items: start; }
+
+/* ---- student information ---- */
+.pf-info { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5) var(--sp-6); }
+.pf-info__item { display: flex; align-items: flex-start; gap: var(--sp-3); min-width: 0; }
+.pf-info__item--wide { grid-column: 1 / -1; }
+.pf-info__ico { flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px; display: grid; place-items: center;
+    background: var(--bg); color: var(--gold-deep); font-size: 1.15rem; }
+.pf-info__item > div { display: flex; flex-direction: column; min-width: 0; }
+.pf-info__l { font-size: var(--fs-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-500); }
+.pf-info__v { font-size: var(--fs-base); font-weight: 600; color: var(--ink-900); word-break: break-word; }
+
+/* ---- academic snapshot ---- */
+.pf-credits { padding: var(--sp-2) 0 var(--sp-5); border-bottom: 1px solid var(--ink-100); margin-bottom: var(--sp-5); }
+.pf-credits__top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--sp-3); margin-bottom: 10px; }
+.pf-credits__top span { font-size: var(--fs-sm); color: var(--ink-500); font-weight: 600; }
+.pf-credits__top b { font-size: var(--fs-xl); font-weight: 700; }
+.pf-credits__top small { font-size: var(--fs-sm); font-weight: 600; color: var(--ink-400, var(--ink-500)); }
+.pf-credits__bar { height: 10px; border-radius: 99px; background: var(--ink-100); overflow: hidden; }
+.pf-credits__bar > span { display: block; height: 100%; border-radius: 99px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold)); }
+.pf-credits__legend { display: flex; gap: var(--sp-5); margin-top: 10px; }
+.pf-credits__legend span { display: inline-flex; align-items: center; gap: 7px; font-size: var(--fs-xs); font-weight: 600; color: var(--ink-600, var(--ink-700)); }
+.pf-credits__legend .dot { width: 9px; height: 9px; border-radius: 50%; }
+.pf-credits__legend .dot.done { background: var(--gold-deep); }
+.pf-credits__legend .dot.left { background: var(--ink-200, var(--ink-100)); border: 1px solid var(--ink-300); }
+
+.pf-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-3); }
+.pf-stat { padding: var(--sp-4); border: 1px solid var(--ink-100); border-radius: 14px; background: var(--bg); }
+.pf-stat__l { display: block; font-size: var(--fs-xs); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--ink-500); margin-bottom: 5px; }
+.pf-stat__v { font-size: var(--fs-lg); font-weight: 700; color: var(--ink-900); }
+.pf-stat__v small { font-size: var(--fs-xs); font-weight: 600; color: var(--ink-400, var(--ink-500)); margin-left: 3px; }
+.pf-stat__v--ok { color: #16a34a; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1023px) {
+    .pf-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    .pf-card { padding: var(--sp-5); }
+    .pf-id__body { flex-direction: column; align-items: center; text-align: center; gap: var(--sp-3); padding: 0 var(--sp-5) var(--sp-5); }
+    .pf-id__avatar { margin-top: -52px; }
+    .pf-id__chips { justify-content: center; }
+    .pf-id__edit { width: 100%; justify-content: center; }
+    .pf-info { grid-template-columns: 1fr; gap: var(--sp-4); }
+    .pf-stats { grid-template-columns: 1fr 1fr; }
+}

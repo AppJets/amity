@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0e244e" />
+    <title>Registration · Amity University Dubai — Student Portal</title>
+
+    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <link rel="stylesheet" href="assets/css/dashboard.css" />
+    <link rel="stylesheet" href="assets/css/registration.css" />
+</head>
+<body class="page-inner">
+<div class="app">
+
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sb-head">
+            <img class="sb-head__logo logo-light" src="assets/img/amity-logo-dark.png" alt="Amity University Dubai" />
+            <img class="sb-head__logo logo-dark" src="assets/img/amity-logo-white.png" alt="Amity University Dubai" />
+            <img class="sb-head__icon" src="assets/img/amity-icon.png" alt="Amity" />
+            <button class="sb-toggle" id="sbToggle" aria-label="Toggle sidebar"><i class="ph-bold ph-caret-left"></i></button>
+            <button class="sidebar__close" id="sidebarClose" aria-label="Close menu">&times;</button>
+        </div>
+
+        <div class="sb-search">
+            <i class="ph-bold ph-magnifying-glass"></i>
+            <input type="text" placeholder="Search..." aria-label="Search" />
+        </div>
+
+        <nav class="nav">
+            <a class="nav__link" href="dashboard.html" data-tip="Dashboard"><i class="ph-bold ph-squares-four"></i> <span class="nav__text">Dashboard</span></a>
+
+            <div class="nav__label">Academics</div>
+            <a class="nav__link" href="attendance.html" data-tip="Attendance"><i class="ph-bold ph-check-circle"></i> <span class="nav__text">Attendance</span></a>
+            <a class="nav__link" href="timetable.html" data-tip="Timetable"><i class="ph-bold ph-calendar-dots"></i> <span class="nav__text">Timetable</span></a>
+            <a class="nav__link is-active" href="registration.html" data-tip="Registration"><i class="ph-bold ph-clipboard-text"></i> <span class="nav__text">Registration</span></a>
+            <a class="nav__link" href="#" data-tip="Exams & Results"><i class="ph-bold ph-exam"></i> <span class="nav__text">Exams &amp; Results</span></a>
+
+            <div class="nav__label">Services</div>
+            <a class="nav__link" href="#" data-tip="Fees"><i class="ph-bold ph-bank"></i> <span class="nav__text">Fees</span> <span class="nav__badge">Due</span></a>
+            <a class="nav__link" href="#" data-tip="Visa Services"><i class="ph-bold ph-airplane-tilt"></i> <span class="nav__text">Visa Services</span></a>
+            <a class="nav__link" href="#" data-tip="Letter Requests"><i class="ph-bold ph-envelope-simple"></i> <span class="nav__text">Letter Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Lab & Studio Booking"><i class="ph-bold ph-flask"></i> <span class="nav__text">Lab &amp; Studio Booking</span></a>
+            <a class="nav__link" href="#" data-tip="E-Library"><i class="ph-bold ph-books"></i> <span class="nav__text">E-Library</span></a>
+            <a class="nav__link" href="#" data-tip="Hostel"><i class="ph-bold ph-bed"></i> <span class="nav__text">Hostel</span></a>
+
+            <div class="nav__label">More</div>
+            <a class="nav__link" href="#" data-tip="Academic Requests"><i class="ph-bold ph-arrows-clockwise"></i> <span class="nav__text">Academic Requests</span></a>
+            <a class="nav__link" href="#" data-tip="Feedback"><i class="ph-bold ph-chat-circle-dots"></i> <span class="nav__text">Feedback</span></a>
+        </nav>
+
+        <div class="profile sb-profile" id="profile">
+            <button class="sb-user" id="profileBtn" data-tip="Ghaya Alsuwaidi" aria-haspopup="true" aria-expanded="false">
+                <span class="sb-user__pic"><img src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" /></span>
+                <span class="sb-user__info">
+                    <span class="sb-user__name">Ghaya Alsuwaidi</span>
+                    <span class="sb-user__mail">AUD31310 · BIDES</span>
+                </span>
+                <i class="sb-user__more ph-bold ph-dots-three-outline"></i>
+            </button>
+            <div class="profile__dropdown profile__dropdown--up" role="menu">
+                <div class="profile__head">
+                    <img class="profile__pic" src="assets/img/student-photo-new.jpg" alt="Ghaya Alsuwaidi" />
+                    <div><div class="profile__name">Ghaya Alsuwaidi</div><div class="profile__sub">AUD31310 · BIDES</div></div>
+                </div>
+                <div class="profile__divider"></div>
+                <a class="profile__link" href="profile.html" role="menuitem"><i class="ph-bold ph-user"></i> My Profile</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-gear"></i> Settings</a>
+                <a class="profile__link" href="#" role="menuitem"><i class="ph-bold ph-question"></i> Help &amp; Support</a>
+                <div class="profile__divider"></div>
+                <a class="profile__link profile__link--logout" href="index.html" role="menuitem"><i class="ph-bold ph-sign-out"></i> Logout</a>
+            </div>
+        </div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+    <div class="sb-tip" id="sbTip" role="tooltip"></div>
+
+    <!-- ===================== MAIN ===================== -->
+    <div class="main">
+        <header class="topbar">
+            <button class="topbar__back" aria-label="Back"
+                    onclick="window.history.length > 1 ? history.back() : (location.href='dashboard.html')">
+                <i class="ph-bold ph-arrow-left"></i>
+            </button>
+            <button class="sb-expand" id="sbExpand" aria-label="Expand sidebar"><i class="ph-bold ph-sidebar-simple"></i></button>
+            <span class="topbar__title">Registration</span>
+            <span class="topbar__spacer"></span>
+            <button class="icon-btn" aria-label="Search"><i class="ph-bold ph-magnifying-glass"></i></button>
+            <button class="icon-btn" aria-label="Notifications"><i class="ph-bold ph-bell"></i><span class="dot"></span></button>
+            <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="ph-bold ph-moon" id="themeIcon"></i></button>
+        </header>
+
+        <main class="content">
+            <div class="reg">
+                <div class="reg-top">
+                    <div class="reg-top__title">Registration Form<small>Review your details and complete the highlighted fields</small></div>
+                    <div class="reg-top__actions">
+                        <div class="reg-layout" id="regLayout" role="tablist" aria-label="Stepper layout">
+                            <button type="button" data-layout="top" class="is-active"><i class="ph-bold ph-rows"></i> Top</button>
+                            <button type="button" data-layout="side"><i class="ph-bold ph-sidebar-simple"></i> Side</button>
+                        </div>
+                        <a class="reg-finalview" href="#"><i class="ph-bold ph-file-text"></i> Final view</a>
+                    </div>
+                </div>
+
+                <div class="reg-card" id="regCard">
+                    <!-- stepper -->
+                    <div class="wiz-steps" id="wizSteps">
+                        <div class="wiz-step is-active" data-go="0"><span class="wiz-step__num">1</span><span class="wiz-step__label">Basic<small>Information</small></span></div>
+                        <div class="wiz-line"></div>
+                        <div class="wiz-step" data-go="1"><span class="wiz-step__num">2</span><span class="wiz-step__label">Family<small>&amp; Others</small></span></div>
+                        <div class="wiz-line"></div>
+                        <div class="wiz-step" data-go="2"><span class="wiz-step__num">3</span><span class="wiz-step__label">Qualification<small>Information</small></span></div>
+                        <div class="wiz-line"></div>
+                        <div class="wiz-step" data-go="3"><span class="wiz-step__num">4</span><span class="wiz-step__label">Work<small>Experience</small></span></div>
+                        <div class="wiz-line"></div>
+                        <div class="wiz-step" data-go="4"><span class="wiz-step__num">5</span><span class="wiz-step__label">Documents<small>Upload</small></span></div>
+                    </div>
+
+                    <!-- mobile progress -->
+                    <div class="wiz-mini" id="wizMini">
+                        <div class="wiz-mini__row"><span class="wiz-mini__title" id="miniTitle">Basic Information</span><span class="wiz-mini__count" id="miniCount">Step 1 of 5</span></div>
+                        <div class="wiz-mini__bar"><span id="miniBar" style="width:20%"></span></div>
+                    </div>
+
+                    <div class="reg-body">
+                    <aside class="wiz-vside" id="wizVside">
+                        <div class="wiz-vside__head">Sections</div>
+                        <div class="wiz-vstep is-active" data-go="0"><span class="wiz-vstep__num">1</span><span class="wiz-vstep__label"><span class="wiz-vstep__t">Basic Information</span><span class="wiz-vstep__sub">Personal, contact, enrolment</span></span></div>
+                        <div class="wiz-vstep" data-go="1"><span class="wiz-vstep__num">2</span><span class="wiz-vstep__label"><span class="wiz-vstep__t">Family &amp; Others</span><span class="wiz-vstep__sub">Parent / guardian details</span></span></div>
+                        <div class="wiz-vstep" data-go="2"><span class="wiz-vstep__num">3</span><span class="wiz-vstep__label"><span class="wiz-vstep__t">Qualification</span><span class="wiz-vstep__sub">Schooling, tests, degree</span></span></div>
+                        <div class="wiz-vstep" data-go="3"><span class="wiz-vstep__num">4</span><span class="wiz-vstep__label"><span class="wiz-vstep__t">Work Experience</span><span class="wiz-vstep__sub">Employment details</span></span></div>
+                        <div class="wiz-vstep" data-go="4"><span class="wiz-vstep__num">5</span><span class="wiz-vstep__label"><span class="wiz-vstep__t">Documents</span><span class="wiz-vstep__sub">Upload missing files</span></span></div>
+                    </aside>
+
+                    <form id="regForm" novalidate>
+
+                        <!-- ============ STEP 1 — BASIC ============ -->
+                        <section class="reg-step is-active" data-step="0">
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Personal details</span><span class="reg-group__hint">Your name, gender and date of birth</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">Student Name (English)</label><input class="fld__control" value="Ghaya Alsuwaidi" /></div>
+                                    <div class="fld"><label class="fld__label">Student Name (Arabic) <i class="ph ph-info info"></i></label><input class="fld__control" placeholder="الاسم الكامل" /></div>
+                                    <div class="fld"><label class="fld__label">Gender</label><select class="fld__control"><option>Female</option><option>Male</option></select></div>
+                                    <div class="fld"><label class="fld__label">Date of Birth</label><input class="fld__control" type="date" value="2004-03-14" /></div>
+                                    <div class="fld"><label class="fld__label">Marital Status</label><select class="fld__control"><option>Single</option><option>Married</option></select></div>
+                                    <div class="fld"><label class="fld__label">Special Needs</label><select class="fld__control"><option>None</option><option>Yes</option></select></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Contact</span><span class="reg-group__hint">Make sure both are verified — we send official notices here</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld fld--span2"><label class="fld__label">Email Address <span class="ok">Verified</span></label>
+                                        <div class="fld__group"><input class="fld__control" value="ghaya.alsuwaidi@amitydubai.ae" /><button type="button" class="fld__addon" data-verify="email" aria-label="Verify email"><i class="ph-bold ph-paper-plane-tilt"></i></button></div></div>
+                                    <div class="fld fld--span2"><label class="fld__label">Mobile Number <span class="ok">Verified</span></label>
+                                        <div class="fld__group"><select class="fld__control fld__cc"><option>AE +971</option><option>IN +91</option></select><input class="fld__control" value="50 997 2598" /><button type="button" class="btn-otp" data-verify="otp">Send OTP</button></div></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Nationality &amp; residence</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">Nationality</label><select class="fld__control"><option>United Arab Emirates</option><option>India</option></select></div>
+                                    <div class="fld"><label class="fld__label">Mother's Nationality</label><select class="fld__control"><option>United Arab Emirates</option><option>India</option></select></div>
+                                    <div class="fld"><label class="fld__label">Home Emirate</label><input class="fld__control" value="Dubai" /></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Enrolment</span><span class="reg-group__hint">Confirm these before you continue</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">Student Type</label><select class="fld__control"><option>Continuing</option><option>New</option></select></div>
+                                    <div class="fld"><label class="fld__label">Do you have an Amity Visa? <span class="req">*</span></label><select class="fld__control" required><option value="">Select one</option><option>Yes</option><option>No</option></select></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-ro">
+                                <div class="reg-ro__head"><i class="ph-bold ph-lock-simple"></i><span class="reg-ro__title">From your admission record</span><span class="reg-ro__chip"><i class="ph-bold ph-lock-simple"></i> Read-only</span></div>
+                                <div class="reg-ro__grid">
+                                    <div class="kv"><span class="kv__l">Passport Number</span><span class="kv__v">AA672536</span></div>
+                                    <div class="kv"><span class="kv__l">Emirates ID</span><span class="kv__v">784-2004-6562341-6</span></div>
+                                    <div class="kv"><span class="kv__l">Emirates ID Expiry</span><span class="kv__v">12 Aug 2027</span></div>
+                                    <div class="kv"><span class="kv__l">Passport Expiry</span><span class="kv__v muted">—</span></div>
+                                    <div class="kv"><span class="kv__l">Mode of Study</span><span class="kv__v">Full Time</span></div>
+                                    <div class="kv"><span class="kv__l">Institution</span><span class="kv__v">Amity University Dubai</span></div>
+                                    <div class="kv"><span class="kv__l">Academic Period</span><span class="kv__v">2025-2026</span></div>
+                                    <div class="kv"><span class="kv__l">Semester Enrolment</span><span class="kv__v">Fall</span></div>
+                                    <div class="kv"><span class="kv__l">Campus</span><span class="kv__v">Dubai</span></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ============ STEP 2 — FAMILY ============ -->
+                        <section class="reg-step" data-step="1">
+                            <div class="reg-group">
+                                <div class="reg-group__head">
+                                    <div><span class="reg-group__title"><i class="ph-bold ph-user"></i> Father's details</span><span class="reg-group__hint">Pre-filled from admission — tap Edit to change</span></div>
+                                    <button type="button" class="reg-group__edit"><i class="ph-bold ph-pencil-simple"></i> Edit</button>
+                                </div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">First Name</label><input class="fld__control" value="Deepak" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Middle Name</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Last Name</label><input class="fld__control" value="Madaan" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Employer Name</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Designation</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Mobile No.</label><input class="fld__control" value="+91 78145 60036" readonly /></div>
+                                    <div class="fld fld--span2"><label class="fld__label">Email Address</label><input class="fld__control" value="maniarora218@gmail.com" readonly /></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head">
+                                    <div><span class="reg-group__title"><i class="ph-bold ph-user"></i> Mother's details</span><span class="reg-group__hint">Pre-filled from admission — tap Edit to change</span></div>
+                                    <button type="button" class="reg-group__edit"><i class="ph-bold ph-pencil-simple"></i> Edit</button>
+                                </div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">First Name</label><input class="fld__control" value="Money" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Middle Name</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Last Name</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Employer Name</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Designation</label><input class="fld__control" readonly /></div>
+                                    <div class="fld"><label class="fld__label">Mobile No.</label><input class="fld__control" value="+91 78145 60036" readonly /></div>
+                                    <div class="fld fld--span2"><label class="fld__label">Email Address</label><input class="fld__control" value="maniarora218@gmail.com" readonly /></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ============ STEP 3 — QUALIFICATION ============ -->
+                        <section class="reg-step" data-step="2">
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title"><i class="ph-bold ph-medal"></i> Grade X</span><span class="reg-group__hint">Curriculum: CBSE</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld fld--span2"><label class="fld__label">School Name</label><input class="fld__control" value="Cambridge International School, Amritsar" /></div>
+                                    <div class="fld"><label class="fld__label">Score Type <span class="req">*</span></label><select class="fld__control"><option>Mark</option><option>Grade</option><option>CGPA</option></select></div>
+                                    <div class="fld"><label class="fld__label">Total Score</label><input class="fld__control" value="70.6" /></div>
+                                    <div class="fld"><label class="fld__label">Year</label><input class="fld__control" value="2023" /></div>
+                                </div>
+                            </div>
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title"><i class="ph-bold ph-medal"></i> Grade XI</span><span class="reg-group__hint">Curriculum: CBSE</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld fld--span2"><label class="fld__label">School Name</label><input class="fld__control" value="Cambridge International School, Amritsar" /></div>
+                                    <div class="fld"><label class="fld__label">Score Type <span class="req">*</span></label><select class="fld__control"><option>Mark</option><option>Grade</option><option>CGPA</option></select></div>
+                                    <div class="fld"><label class="fld__label">Total Score</label><input class="fld__control" placeholder="—" /></div>
+                                    <div class="fld"><label class="fld__label">Year</label><input class="fld__control" value="2024" /></div>
+                                </div>
+                            </div>
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title"><i class="ph-bold ph-medal"></i> Grade XII</span><span class="reg-group__hint">Curriculum: CBSE · Country: India</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld fld--span2"><label class="fld__label">School Name</label><input class="fld__control" value="Cambridge International School, Amritsar" /></div>
+                                    <div class="fld"><label class="fld__label">Score Type <span class="req">*</span></label><select class="fld__control"><option>Mark</option><option>Grade</option><option>CGPA</option></select></div>
+                                    <div class="fld"><label class="fld__label">Total Score</label><input class="fld__control" placeholder="—" /></div>
+                                    <div class="fld"><label class="fld__label">Year</label><input class="fld__control" value="2025" /></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">English &amp; language test</span><span class="reg-group__hint">Leave blank if not applicable</span></div></div>
+                                <div class="fgrid fgrid--3">
+                                    <div class="fld"><label class="fld__label">Test Name</label><select class="fld__control"><option value="">Select</option><option>IELTS</option><option>TOEFL</option><option>EmSAT</option></select></div>
+                                    <div class="fld"><label class="fld__label">Test Date</label><input class="fld__control" type="date" /></div>
+                                    <div class="fld"><label class="fld__label">Test Score</label><input class="fld__control" value="0" /></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Location &amp; degree</span></div></div>
+                                <div class="fgrid">
+                                    <div class="fld"><label class="fld__label">Student Country</label><input class="fld__control" value="United Arab Emirates" /></div>
+                                    <div class="fld"><label class="fld__label">Student City</label><input class="fld__control" value="Dubai" /></div>
+                                    <div class="fld fld--span2"><label class="fld__label">Current Address</label><input class="fld__control" value="Al Barsha, Dubai" /></div>
+                                    <div class="fld"><label class="fld__label">Student Degree <span class="req">*</span></label><select class="fld__control" required><option value="">Select degree</option><option>Bachelor</option><option>Master</option></select></div>
+                                    <div class="fld"><label class="fld__label">Exchange University Code</label><select class="fld__control"><option value="">Select university</option><option>Not applicable</option></select></div>
+                                </div>
+                            </div>
+
+                            <div class="reg-ro">
+                                <div class="reg-ro__head"><i class="ph-bold ph-lock-simple"></i><span class="reg-ro__title">From your admission record</span><span class="reg-ro__chip"><i class="ph-bold ph-lock-simple"></i> Read-only</span></div>
+                                <div class="reg-ro__grid">
+                                    <div class="kv"><span class="kv__l">Student Program</span><span class="kv__v">Bachelor of Interior Design</span></div>
+                                    <div class="kv"><span class="kv__l">1st Academic Period</span><span class="kv__v">2025-2026</span></div>
+                                    <div class="kv"><span class="kv__l">Academic Periods for Graduation</span><span class="kv__v">202501</span></div>
+                                    <div class="kv"><span class="kv__l">Currently Registered Credits</span><span class="kv__v">18</span></div>
+                                    <div class="kv"><span class="kv__l">Required Credits for Graduation</span><span class="kv__v">9</span></div>
+                                    <div class="kv"><span class="kv__l">High School Country</span><span class="kv__v">India</span></div>
+                                    <div class="kv"><span class="kv__l">High School System</span><span class="kv__v">CBSE</span></div>
+                                    <div class="kv"><span class="kv__l">High School Exit Score</span><span class="kv__v">0</span></div>
+                                    <div class="kv"><span class="kv__l">High School Completion Year</span><span class="kv__v">2025</span></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ============ STEP 4 — WORK ============ -->
+                        <section class="reg-step" data-step="3">
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title">Work experience</span><span class="reg-group__hint">Optional — your current employment, if any</span></div></div>
+                                <div class="fgrid fgrid--3">
+                                    <div class="fld"><label class="fld__label">Employment Status</label><select class="fld__control"><option value="">Select option</option><option>Employed</option><option>Unemployed</option><option>Self-employed</option></select></div>
+                                    <div class="fld"><label class="fld__label">Employment Sector</label><select class="fld__control"><option>Private Sector</option><option>Public Sector</option><option>Not applicable</option></select></div>
+                                    <div class="fld"><label class="fld__label">Employment Position</label><input class="fld__control" placeholder="e.g. Intern, Analyst" /></div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ============ STEP 5 — DOCUMENTS ============ -->
+                        <section class="reg-step" data-step="4">
+                            <div class="reg-group">
+                                <div class="reg-group__head"><div><span class="reg-group__title"><i class="ph-bold ph-folders"></i> Documents</span><span class="reg-group__hint">Upload pending documents · PDF, JPG or PNG up to 5 MB · verified files are locked</span></div></div>
+                                <div class="doclist">
+                                    <!-- verified (locked) -->
+                                    <div class="doc is-verified">
+                                        <span class="doc__ico"><i class="ph-bold ph-identification-card"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Passport Copy</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-seal-check"></i> Verified</span><span class="doc__file">passport_copy.pdf</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <span class="doc__lock"><i class="ph-bold ph-lock-simple"></i></span>
+                                        </span>
+                                    </div>
+                                    <!-- uploaded (in review) -->
+                                    <div class="doc is-uploaded">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-text"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Passport Size Picture</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-clock"></i> In review</span><span class="doc__file">photo_35x45.png</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                    <!-- verified (locked) -->
+                                    <div class="doc is-verified">
+                                        <span class="doc__ico"><i class="ph-bold ph-certificate"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Grade X Marksheet</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-seal-check"></i> Verified</span><span class="doc__file">grade_x.pdf</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <span class="doc__lock"><i class="ph-bold ph-lock-simple"></i></span>
+                                        </span>
+                                    </div>
+                                    <!-- pending -->
+                                    <div class="doc is-pending">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-dashed"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Grade XI Marksheet</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-warning-circle"></i> Pending</span><span class="doc__file">No file uploaded</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn docbtn--primary" data-act="upload"><i class="ph-bold ph-upload-simple"></i> Upload</button>
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                    <!-- pending -->
+                                    <div class="doc is-pending">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-dashed"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Grade XII Marksheet</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-warning-circle"></i> Pending</span><span class="doc__file">No file uploaded</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn docbtn--primary" data-act="upload"><i class="ph-bold ph-upload-simple"></i> Upload</button>
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                    <!-- pending -->
+                                    <div class="doc is-pending">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-dashed"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Bachelor's Marksheet</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-warning-circle"></i> Pending</span><span class="doc__file">No file uploaded</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn docbtn--primary" data-act="upload"><i class="ph-bold ph-upload-simple"></i> Upload</button>
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                    <!-- pending -->
+                                    <div class="doc is-pending">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-dashed"></i></span>
+                                        <span class="doc__main"><span class="doc__name">Bachelor's Certificate</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-warning-circle"></i> Pending</span><span class="doc__file">No file uploaded</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn docbtn--primary" data-act="upload"><i class="ph-bold ph-upload-simple"></i> Upload</button>
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                    <!-- pending -->
+                                    <div class="doc is-pending">
+                                        <input type="file" hidden />
+                                        <span class="doc__ico"><i class="ph-bold ph-file-dashed"></i></span>
+                                        <span class="doc__main"><span class="doc__name">English Language Proficiency Test Result</span>
+                                            <span class="doc__meta"><span class="doc__badge"><i class="ph-bold ph-warning-circle"></i> Pending</span><span class="doc__file">No file uploaded</span></span></span>
+                                        <span class="doc__action">
+                                            <button type="button" class="docbtn docbtn--primary" data-act="upload"><i class="ph-bold ph-upload-simple"></i> Upload</button>
+                                            <button type="button" class="docbtn" data-act="view"><i class="ph-bold ph-eye"></i> View</button>
+                                            <button type="button" class="docbtn" data-act="replace"><i class="ph-bold ph-arrow-counter-clockwise"></i> Replace</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ============ SUCCESS ============ -->
+                        <section class="reg-step" data-step="done">
+                            <div class="reg-done">
+                                <div class="reg-done__ico"><i class="ph-bold ph-check-circle"></i></div>
+                                <h2>Registration submitted</h2>
+                                <p>Your registration form has been submitted for review. You'll be notified once each section is verified by the registrar.</p>
+                                <a class="wiz-btn wiz-btn--next" href="dashboard.html" style="display:inline-flex"><i class="ph-bold ph-house"></i> Back to dashboard</a>
+                            </div>
+                        </section>
+
+                        <!-- nav -->
+                        <div class="wiz-nav" id="wizNav">
+                            <button type="button" class="wiz-btn" id="btnPrev" disabled><i class="ph-bold ph-caret-left"></i> Previous</button>
+                            <button type="button" class="wiz-btn wiz-btn--next" id="btnNext">Next <i class="ph-bold ph-caret-right"></i></button>
+                        </div>
+                    </form>
+                    </div><!-- /.reg-body -->
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/registration.js"></script>
+</body>
+</html>

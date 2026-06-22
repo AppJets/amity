@@ -176,6 +176,12 @@
 /* ===================== MAIN ===================== */
 .main { display: flex; flex-direction: column; min-height: 100vh; transition: margin-left .25s var(--ease); }
 
+/* ===== Inner pages — back button (mobile only); desktop keeps the full shell ===== */
+.topbar__back { display: none; flex: 0 0 42px; width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+    place-items: center; font-size: 1.4rem;
+    border: 1px solid var(--ink-100); background: var(--surface); color: var(--ink-900); }
+.topbar__back:hover { background: var(--ink-100); color: var(--brand-700); }
+
 .topbar {
     position: sticky; top: 0; z-index: 30;
     display: flex; align-items: center; gap: var(--sp-4);
@@ -601,6 +607,11 @@
     .bn__item.is-active i { color: var(--gold-deep); }
 
     .page-dashboard .content { padding-bottom: 92px; }   /* clear the bottom bar (dashboard only) */
+
+    /* inner pages on mobile: header = back button + page title only */
+    .page-inner .topbar__back { display: grid; }
+    .page-inner .topbar__user,
+    .page-inner .topbar .icon-btn { display: none; }
 }
 
 /* small phones: keep stat-card visuals inside the 2-column cards */
